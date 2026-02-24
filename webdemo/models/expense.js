@@ -4,6 +4,8 @@ class Expense {
    @constructor
    @param {date} date - The date of the expense.
    @param {float} income - The author of the book.
+   @param {number} expense - The expense amount.
+   @param {string} detail - Additional details about the transaction.
  */
   constructor(date, income, expense, detail) {
     this.date = date;
@@ -39,14 +41,29 @@ class ExpenseModel {
     return this.expenses;
   }
 
+/**
+   * Calculate total income.
+   * @returns {number} Sum of all income values.
+   */
+
   getTotalIncome() {
     return this.expenses.reduce((sum, exp) => sum + exp.income, 0);
   }
+
+/**
+   * Calculate total expense.
+   * @returns {number} Sum of all expense values.
+   */
 
   getTotalExpense() {
     return this.expenses.reduce((sum, exp) => sum + exp.expense, 0);
   }
 
+/**
+   * Calculate remaining money.
+   * @returns {number} Income minus expense.
+   */
+  
   getMoneyLeft() {
     return this.getTotalIncome() - this.getTotalExpense();
   }
