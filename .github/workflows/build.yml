@@ -31,10 +31,10 @@ jobs:
 
     - name: Build
       run: | 
-        cd jestway
+        working-directory: jestway
         npm install
 
     - name: Test
       run: |
-        cd jestway
+        working-directory: jestway
         npm run test
