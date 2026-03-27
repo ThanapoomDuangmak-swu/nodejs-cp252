@@ -27,7 +27,7 @@ jobs:
 
 
       name: ChangeFolder
-      run : npm install
+      run : cd jestway
 
     - name: Build
       run: | 
